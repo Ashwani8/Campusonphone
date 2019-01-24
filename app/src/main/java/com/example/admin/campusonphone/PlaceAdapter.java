@@ -1,29 +1,68 @@
 package com.example.admin.campusonphone;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 /**
  * This adapter class for the RecyclerView, contains the Place Data
  */
 public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.PlaceViewHolder> {
+    // member variables
+    private ArrayList<Place> mPlacesData;
+    private Context mContext;
+
+    /**
+     * Constructor that passes in the Places data and the context
+     * @param mContext context of the application
+     * @param mPlacesData ArrayList containing the place data/information
+     */
+    public PlaceAdapter(Context mContext, ArrayList<Place> mPlacesData) {
+        this.mPlacesData = mPlacesData;
+        this.mContext = mContext;
+    }
+
+    /**
+     * Required methods for creating the viewholder objects
+     * @param parent The ViewGroup into which the new View will be added
+     *                after it is bound to an adapter position.
+     * @param viewType he view type of the new View.
+     * @return The newly created ViewHolder
+     */
     @NonNull
     @Override
-    public PlaceViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        return null;
+    public PlaceViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+       return new PlaceViewHolder(LayoutInflater.from(mContext)
+       .inflate(R.layout.place_list_item, parent, false));
     }
-
+    /**
+     * Required method that binds the data to the viewholder.
+     *
+     * @param holder The AttractionViewHolder into which the data should be put.
+     * @param position The adapter position.
+     */
     @Override
-    public void onBindViewHolder(@NonNull PlaceViewHolder placeViewHolder, int i) {
-
+    public void onBindViewHolder(@NonNull PlaceViewHolder holder, int position) {
+        // get current Place
+        Place currentPlace = mPlacesData.get(position);
+        // Populate the text views with information/data
+        holder.bindTo(currentPlace);
     }
 
+    /**
+     * Required method for determining the size of the data set
+     * @return Size of the data set
+     */
     @Override
     public int getItemCount() {
-        return 0;
+        return mPlacesData.size();
     }
 
 
@@ -49,6 +88,11 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.PlaceViewHol
             // initialize the textView
             mPlaceName = itemView.findViewById(R.id.place_name);
             mPlaceInfo = itemView.findViewById(R.id.info_subTitle); // some information
+        }
+        void bindTo(Place currentPlace){
+            // Populate the textView with data/info
+            mPlaceName.setText(currentPlace.getPlaceName());
+            mPlaceInfo.setText(currentPlace.getInfo());
         }
 
     }

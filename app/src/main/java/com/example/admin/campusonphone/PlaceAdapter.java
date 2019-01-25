@@ -115,6 +115,7 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.PlaceViewHol
             // create intent to launch new activity for details
             Intent detailIntent = new Intent(mContext, DetailActivity.class);
             detailIntent.putExtra("place_name", currentPlace.getPlaceName());
+            detailIntent.putExtra("place_info", currentPlace.getInfo());
             detailIntent.putExtra("image_resource", currentPlace.getImageResource());
             mContext.startActivity(detailIntent);
         }

@@ -15,11 +15,12 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail_activty);
         // create views
         TextView placesName =  findViewById(R.id.place_name_detail);
+        TextView placeInfo = findViewById(R.id.info_subTitle_detail);
         ImageView placesImage =  findViewById(R.id.placesImage_detail);
 
         // set the view values from key pair of the intent
         placesName.setText(getIntent().getStringExtra("place_name"));
-
+        placeInfo.setText(getIntent().getStringExtra("place_info"));
         // we are using Glide library to handle images
         Glide.with(this).load(getIntent()
                 .getIntExtra("image_resource", 0)).into(placesImage);

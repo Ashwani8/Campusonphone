@@ -48,7 +48,7 @@
     </array>
 
     <string-array name="places_detail_info">
-        <item>@string/detail_text</item>
+        <item>@string/detail_baseball</item>
         <item>@string/detail_badminton</item>
         <item>@string/detail_basketball</item>
         <item>@string/detail_bowling</item>
@@ -58,17 +58,55 @@
         <item>@string/detail_soccer</item>
         <item>@string/detail_swimming</item>
         <item>@string/detail_tabletennis</item>
-        <item>@string/detail_text</item>
+        <item>@string/detail_tennis</item>
     </string-array>
-    <string name="detail_baseball">baseball</string>
-    <string name="detail_badminton">badminton</string>
-    <string name="detail_basketball">basketball</string>
-    <string name="detail_bowling">bowling</string>
-    <string name="detail_cycling">cycling</string>
-    <string name="detail_golf">gold</string>
-    <string name="detail_running">running</string>
-    <string name="detail_soccer">soccer</string>
-    <string name="detail_swimming">swimming</string>
-    <string name="detail_tabletennis">table tennis</string>
-    <string name="detail_tennis">tennis</string>
+    <string name="detail_baseball">Baseball is a bat-and-ball game played between two opposing teams who take turns batting and fielding. The game proceeds when a player on the fielding team, called the pitcher, throws a ball which a player on the batting team tries to hit with a bat. The objectives of the offensive team (batting team ) are to hit the ball into the field of play, and to run the bases—having its runners advance counter-clockwise around four bases to score what are called "runs". The objective of the defensive team (fielding team) is to prevent batters from becoming runners, and to prevent runners\' advance around the bases.A run is scored when a runner legally advances around the bases in order and touches home plate (the place where the player started as a batter). The team that scores the most runs by the end of the game is the winner..\n\n source https://en.wikipedia.org/wiki/Baseball</string>
+    <string name="detail_badminton">Badminton is a racquet sport played using racquets to hit a shuttlecock across a net. Although it may be played with larger teams, the most common forms of the game are "singles" (with one player per side) and "doubles" (with two players per side). Badminton is often played as a casual outdoor activity in a yard or on a beach; formal games are played on a rectangular indoor court. Points are scored by striking the shuttlecock with the racquet and landing it within the opposing side\'s half of the court.
+
+\n \n Each side may only strike the shuttlecock once before it passes over the net. Play ends once the shuttlecock has struck the floor or if a fault has been called by the umpire, service judge, or (in their absence) the opposing side.
+
+\n\n The shuttlecock is a feathered or (in informal matches) plastic projectile which flies differently from the balls used in many other sports. In particular, the feathers create much higher drag, causing the shuttlecock to decelerate more rapidly. Shuttlecocks also have a high top speed compared to the balls in other racquet sports. The flight of the shuttlecock gives the sport its distinctive nature.
+source https://en.wikipedia.org/wiki/Badminton</string>
+
+    <string name="detail_basketball">Basketball is a team sport in which two teams, most commonly of five players each, opposing one another on a rectangular court, compete with the primary objective of shooting a basketball (approximately 9.4 inches (24 cm) in diameter) through the defender\'s hoop (a basket 18 inches (46 cm) in diameter mounted 10 feet (3.048 m) high to a backboard at each end of the court) while preventing the opposing team from shooting through their own hoop. A field goal is worth two points, unless made from behind the three-point line, when it is worth three. After a foul, timed play stops and the player fouled or designated to shoot a technical foul is given one or more one-point free throws. The team with the most points at the end of the game wins, but if regulation play expires with the score tied, an additional period of play (overtime) is mandated.
+\n\n source https://en.wikipedia.org/wiki/Basketball</string>
+    <string name="detail_bowling">Bowling is a target sport and recreational activity in which a player rolls or throws a bowling ball toward pins or another target.
+
+\n\n In pin bowling, the goal is to knock over pins at the end of a lane, with either two or three balls per frame allowed to knock down all pins. A strike is achieved when all the pins are knocked down on the first roll, and a spare is achieved all the pins are knocked over on a second roll. Lanes have wood or synthetic surfaces onto which oil is applied in different oil patterns. Common types of pin bowling include ten-pin, candlepin, duckpin, nine-pin, and five-pin bowling.
+
+\n\n In target bowling, the aim is usually to get the ball as close to a mark as possible. The surface may be grass, gravel, or a synthetic surface. Bowls, skittles, kegel, bocce, carpet bowls, petanque, and boules may have both indoor and outdoor varieties.
+\n\n source https://en.wikipedia.org/wiki/Bowling</string>
+    <string name="detail_cycling">Cycling, also called biking or bicycling, is the use of bicycles for transport, recreation, exercise or sport. People engaged in cycling are referred to as "cyclists", "bikers", or less commonly, as "bicyclists". Apart from two-wheeled bicycles, "cycling" also includes the riding of unicycles, tricycles, quadracycles, recumbent and similar human-powered vehicles (HPVs).
+
+\n\n Bicycles were introduced in the 19th century and now number approximately one billion worldwide. They are the principal means of transportation in many parts of the world.
+
+\n\n source https://en.wikipedia.org/wiki/Cycling</string>
+    <string name="detail_golf">Golf is a club-and-ball sport in which players use various clubs to hit balls into a series of holes on a course in as few strokes as possible.
+
+\n\n Golf, unlike most ball games, cannot and does not utilize a standardized playing area, and coping with the varied terrains encountered on different courses is a key part of the game. The game at the usual level is played on a course with an arranged progression of 18 holes, though recreational courses can be smaller, often having 9 holes. Each hole on the course must contain a tee box to start from, and a putting green containing the actual hole or cup (4.25 inches in diameter). There are other standard forms of terrain in between, such as the fairway, rough (long grass), bunkers (or "sand traps"), and various hazards (water, rocks) but each hole on a course is unique in its specific layout and arrangement.
+
+\n\n Golf is played for the lowest number of strokes by an individual, known as stroke play, or the lowest score on the most individual holes in a complete round by an individual or team, known as match play. Stroke play is the most commonly seen format at all levels, but most especially at the elite level
+
+\n\n source https://en.wikipedia.org/wiki/Golf</string>
+    <string name="detail_running">Running is a method of terrestrial locomotion allowing humans and other animals to move rapidly on foot. Running is a type of gait characterized by an aerial phase in which all feet are above the ground (though there are exceptions). This is in contrast to walking, where one foot is always in contact with the ground, the legs are kept mostly straight and the center of gravity vaults over the stance leg or legs in an inverted pendulum fashion. A characteristic feature of a running body from the viewpoint of spring-mass mechanics is that changes in kinetic and potential energy within a stride occur simultaneously, with energy storage accomplished by springy tendons and passive muscle elasticity. The term running can refer to any of a variety of speeds ranging from jogging to sprinting
+
+\n\n source https://en.wikipedia.org/wiki/Running</string>
+    <string name="detail_soccer">Association football, more commonly known as football or soccer, is a team sport played with a spherical ball between two teams of eleven players. It is played by 250 million players in over 200 countries and dependencies, making it the world\'s most popular sport. The game is played on a rectangular field called a pitch with a goal at each end. The object of the game is to score by moving the ball beyond the goal line into the opposing goal.
+
+\n\n Association football is one of a family of football codes, which emerged from various ball games played worldwide since antiquity. The modern game traces its origins to 1863 when the Laws of the Game were originally codified in England by The Football Association.
+
+\n\n source https://en.wikipedia.org/wiki/Association_football</string>
+    <string name="detail_swimming">Swimming is the self-propulsion of a person through water, usually for recreation, sport, exercise, or survival. Locomotion is achieved through coordinated movement of the limbs, the body, or both. Humans can hold their breath underwater and undertake rudimentary locomotive swimming within weeks of birth, as a survival response.
+
+\n\n Swimming is consistently among the top public recreational activities, and in some countries, swimming lessons are a compulsory part of the educational curriculum. As a formalized sport, swimming features in a range of local, national, and international competitions, including every modern Summer Olympics.
+
+\n\n source https://en.wikipedia.org/wiki/Swimming</string>
+    <string name="detail_tabletennis">Table tennis, also known as ping-pong, is a sport in which two or four players hit a lightweight ball back and forth across a table using small rackets. The game takes place on a hard table divided by a net. Except for the initial serve, the rules are generally as follows: players must allow a ball played toward them to bounce one time on their side of the table, and must return it so that it bounces on the opposite side at least once. A point is scored when a player fails to return the ball within the rules. Play is fast and demands quick reactions. Spinning the ball alters its trajectory and limits an opponent\'s options, giving the hitter a great advantage.
+
+\n\n source https://en.wikipedia.org/wiki/Table_tennis</string>
+    <string name="detail_tennis">Tennis is a racket sport that can be played individually against a single opponent (singles) or between two teams of two players each (doubles). Each player uses a tennis racket that is strung with cord to strike a hollow rubber ball covered with felt over or around a net and into the opponent\'s court. The object of the game is to maneuver the ball in such a way that the opponent is not able to play a valid return. The player who is unable to return the ball will not gain a point, while the opposite player will.
+
+\n\n Tennis is an Olympic sport and is played at all levels of society and at all ages. The sport can be played by anyone who can hold a racket, including wheelchair users. The modern game of tennis originated in Birmingham, England, in the late 19th century as lawn tennis. It had close connections both to various field (lawn) games such as croquet and bowls as well as to the older racket sport today called real tennis. During most of the 19th century, in fact, the term tennis referred to real tennis, not lawn tennis: for example, in Disraeli\'s novel Sybil (1845), Lord Eugene De Vere announces that he will "go down to Hampton Court and play tennis."
+
+\n\n source https://en.wikipedia.org/wiki/Tennis</string>
 </resources>

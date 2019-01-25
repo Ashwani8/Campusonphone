@@ -7,7 +7,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
@@ -77,6 +80,7 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.PlaceViewHol
         // member variables for the TextView
         private TextView mPlaceName;
         private  TextView mPlaceInfo;
+        private ImageView mPlaceImage;
 
         /**
          * Constructor for the ViewHolder, used in onCreteViewHolder
@@ -88,11 +92,13 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.PlaceViewHol
             // initialize the textView
             mPlaceName = itemView.findViewById(R.id.place_name);
             mPlaceInfo = itemView.findViewById(R.id.info_subTitle); // some information
+            mPlaceImage = itemView.findViewById(R.id.placesImage);
         }
         void bindTo(Place currentPlace){
             // Populate the textView with data/info
             mPlaceName.setText(currentPlace.getPlaceName());
             mPlaceInfo.setText(currentPlace.getInfo());
+            Glide.with(mContext).load(currentPlace.getImageResource()).into(mPlaceImage);
         }
 
     }

@@ -1,5 +1,6 @@
 package com.example.admin.campusonphone;
 
+import android.content.res.TypedArray;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -39,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
     private void initializeData() {
         String[] placeList = getResources().getStringArray(R.array.places_name);
         String[] placeInfo = getResources().getStringArray(R.array.places_info);
+        TypedArray placeImageResources =
+                getResources().obtainTypedArray(R.array.places_images);
 
         // Clear the existing place data/information to avaoid duplication
         mPlacesData.clear();
@@ -46,7 +49,9 @@ public class MainActivity extends AppCompatActivity {
         // Create the ArrayList of Places Objects with Names and
         // information about each place
         for(int i = 0; i < placeList.length; i++){
-            mPlacesData.add(new Place(placeList[i], placeInfo[i]));
+            mPlacesData.add(new Place(placeList[i], placeInfo[i],
+                    placeImageResources.getResourceId(i,0)));
         }
+        placeImageResources.recycle();
     }
 }

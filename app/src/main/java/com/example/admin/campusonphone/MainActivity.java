@@ -4,6 +4,7 @@ import android.content.res.TypedArray;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
@@ -23,11 +24,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // get the column count mobile in landscape/portrait,
+        // runtime will take care of which inter to pick
+        int gridColumnCount = getResources().getInteger(R.integer.grid_column_count);
         // Initiate the RecyclerView
         mRecyclerView = findViewById(R.id.recyclerView);
 
         // set the Layout manager
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mRecyclerView.setLayoutManager(new GridLayoutManager(this, gridColumnCount));
 
         // Initialize the ArrayList that will contain the data/information about the places
         mPlacesData = new ArrayList<>();
@@ -37,6 +42,13 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.setAdapter(mAdapter);
         // get the place data
         initializeData();
+        // if there are more than 1 column disable swipe to dismiss
+        int swipeDirs;
+        if(gridColumnCount > 1){
+            swipeDirs = 0;
+        }else {
+            swipeDirs = ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT;
+        }
 
         // Helper class for creating swipe to dismiss and drag and drop functionality.
         ItemTouchHelper helper = new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(
@@ -44,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
                         |ItemTouchHelper.RIGHT
                         |ItemTouchHelper.DOWN
                         | ItemTouchHelper.UP,
-                ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+                swipeDirs) {
             /**
              * Defines the drag and drop functionality.
              *

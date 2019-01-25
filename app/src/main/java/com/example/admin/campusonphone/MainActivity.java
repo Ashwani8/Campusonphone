@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 
 import java.util.ArrayList;
 
@@ -32,6 +33,35 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.setAdapter(mAdapter);
         // get the place data
         initializeData();
+
+        // Helper class for creating swipe to dismiss functionality
+        ItemTouchHelper helper = new
+                ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0,
+                ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+
+                    @Override
+                    public boolean onMove(RecyclerView recyclerView,
+                        RecyclerView.ViewHolder viewHolder,
+                        RecyclerView.ViewHolder target) {
+                        return false;
+                        }
+
+            /**
+             * Defines the swipe to dismiss functionality.
+             *
+             * @param viewHolder The viewholder being swiped.
+             * @param direction The direction it is swiped in.
+             */
+            @Override
+                    public void onSwiped(RecyclerView.ViewHolder viewHolder,
+                    int direction) {
+                mPlacesData.remove(viewHolder.getAdapterPosition());
+
+                // to animate the deletion properly, we must call notification
+                mAdapter.notifyItemRemoved(viewHolder.getAdapterPosition());
+                    }});
+        // attach functionality to RecyclerView
+        helper.attachToRecyclerView(mRecyclerView);
     }
 
     /**

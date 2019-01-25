@@ -3,6 +3,7 @@
     <string name="place_name">Place Name</string>
     <string name="information">Information</string>
     <string name="place_info_details">Here are details about</string>
+    <string name="detail_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)</string>
 
     <string-array name="places_name">
         <item>Baseball Court</item>
@@ -45,4 +46,29 @@
         <item>@drawable/img_tabletennis</item>
         <item>@drawable/img_tennis</item>
     </array>
+
+    <string-array name="places_detail_info">
+        <item>@string/detail_text</item>
+        <item>@string/detail_badminton</item>
+        <item>@string/detail_basketball</item>
+        <item>@string/detail_bowling</item>
+        <item>@string/detail_cycling</item>
+        <item>@string/detail_golf</item>
+        <item>@string/detail_running</item>
+        <item>@string/detail_soccer</item>
+        <item>@string/detail_swimming</item>
+        <item>@string/detail_tabletennis</item>
+        <item>@string/detail_text</item>
+    </string-array>
+    <string name="detail_baseball">baseball</string>
+    <string name="detail_badminton">badminton</string>
+    <string name="detail_basketball">basketball</string>
+    <string name="detail_bowling">bowling</string>
+    <string name="detail_cycling">cycling</string>
+    <string name="detail_golf">gold</string>
+    <string name="detail_running">running</string>
+    <string name="detail_soccer">soccer</string>
+    <string name="detail_swimming">swimming</string>
+    <string name="detail_tabletennis">table tennis</string>
+    <string name="detail_tennis">tennis</string>
 </resources>

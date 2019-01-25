@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private void initializeData() {
         String[] placeList = getResources().getStringArray(R.array.places_name);
-        String[] placeInfo = getResources().getStringArray(R.array.places_info);
+        String[] placeInfo = getResources().getStringArray(R.array.places_detail_info);
         TypedArray placeImageResources =
                 getResources().obtainTypedArray(R.array.places_images);
 

@@ -18,7 +18,7 @@
 
     <TextView
         android:id="@+id/place_name"
-        style="@style/TextAppearance.AppCompat.Title"
+        style="@style/PlacesName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="8dp"
@@ -28,7 +28,7 @@
 
     <TextView
         android:id="@+id/info_Title"
-        style="@style/TextAppearance.AppCompat.Subhead"
+        style="@style/PlacesDetailText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/placesImage"
@@ -37,7 +37,7 @@
 
     <TextView
         android:id="@+id/info_subTitle"
-        style="@style/Base.TextAppearance.AppCompat.Subhead"
+        style="@style/PlacesDetailText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="8dp"

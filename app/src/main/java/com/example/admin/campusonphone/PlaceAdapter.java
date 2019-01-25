@@ -1,6 +1,7 @@
 package com.example.admin.campusonphone;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -75,7 +76,8 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.PlaceViewHol
     /**
      * ViewHolder class that represents each row data for the RecyclerView
      */
-     class PlaceViewHolder extends RecyclerView.ViewHolder{
+     class PlaceViewHolder extends RecyclerView.ViewHolder
+    implements View.OnClickListener{
 
         // member variables for the TextView
         private TextView mPlaceName;
@@ -93,6 +95,9 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.PlaceViewHol
             mPlaceName = itemView.findViewById(R.id.place_name);
             mPlaceInfo = itemView.findViewById(R.id.info_subTitle); // some information
             mPlaceImage = itemView.findViewById(R.id.placesImage);
+
+            // Set the OnClickListener to the entire view.
+            itemView.setOnClickListener(this);
         }
         void bindTo(Place currentPlace){
             // Populate the textView with data/info
@@ -101,5 +106,17 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.PlaceViewHol
             Glide.with(mContext).load(currentPlace.getImageResource()).into(mPlaceImage);
         }
 
+        // implements onClick on entire itemView (set earlier)
+        @Override
+        public void onClick(View view) {
+            // get the sport object for the item that was clicked
+            Place currentPlace = mPlacesData.get(getAdapterPosition());
+
+            // create intent to launch new activity for details
+            Intent detailIntent = new Intent(mContext, DetailActivity.class);
+            detailIntent.putExtra("place_name", currentPlace.getPlaceName());
+            detailIntent.putExtra("image_resource", currentPlace.getImageResource());
+            mContext.startActivity(detailIntent);
+        }
     }
 }

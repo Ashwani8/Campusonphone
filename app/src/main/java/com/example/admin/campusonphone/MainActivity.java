@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,14 +37,31 @@ public class MainActivity extends AppCompatActivity {
 
         // Helper class for creating swipe to dismiss functionality
         ItemTouchHelper helper = new
-                ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0,
+                ItemTouchHelper(new ItemTouchHelper.SimpleCallback(
+                ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT |
+                        ItemTouchHelper.DOWN | ItemTouchHelper.UP,
                 ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
 
+            /**
+             *add drag and drop functionality
+             * @param recyclerView The RecyclerView that contains the list items
+             * @param viewHolder The PlacesViewHolder that is being moved
+             * @param target the Place view holder with which you are switching with
+             * @return true if the item was moved, false otherwise
+             */
                     @Override
                     public boolean onMove(RecyclerView recyclerView,
                         RecyclerView.ViewHolder viewHolder,
                         RecyclerView.ViewHolder target) {
-                        return false;
+
+                        // get the from and to position
+                        int from = viewHolder.getAdapterPosition();
+                        int to = viewHolder.getAdapterPosition();
+
+                        // swap the items and notify the adapter
+                        Collections.swap(mPlacesData, from, to);
+                        mAdapter.notifyItemMoved(from, to);
+                        return true;
                         }
 
             /**

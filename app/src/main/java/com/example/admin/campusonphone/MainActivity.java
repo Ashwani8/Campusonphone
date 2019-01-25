@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
             /**
              * Defines the swipe to dismiss functionality.
              *
-             * @param viewHolder The viewholder being swiped.
+             * @param viewHolder The view holder being swiped.
              * @param direction The direction it is swiped in.
              */
             @Override

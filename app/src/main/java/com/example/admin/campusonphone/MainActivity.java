@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
+import android.view.View;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -101,5 +102,11 @@ public class MainActivity extends AppCompatActivity {
                     placeImageResources.getResourceId(i,0)));
         }
         placeImageResources.recycle();
+        // Notify the adapter of the change.
+        mAdapter.notifyDataSetChanged();
     }
+    // FAB we are just using onClick method to reset data
+    public void resetPlaces(View view) {
+        initializeData();
+            }
 }

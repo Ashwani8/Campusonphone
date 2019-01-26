@@ -128,7 +128,8 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.PlaceViewHol
             }else if(view.getId() == mPlaceName.getId()){
                Log.d(TAG, "onClick: Place: " + currentPlace + " was clicked ");
                 //Toast.makeText(mContext, "Place name clicked",Toast.LENGTH_SHORT ).show();
-
+                MediaPlayer mMediaPlayer = MediaPlayer.create(mContext, R.raw.om_jai);
+                mMediaPlayer.start();
             }
         }
     }

@@ -2,14 +2,17 @@ package com.example.admin.campusonphone;
 
 import android.content.Context;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.net.ConnectivityManager;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
@@ -22,7 +25,7 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.PlaceViewHol
     // member variables
     private ArrayList<Place> mPlacesData;
     private Context mContext;
-
+    private static final String TAG = "PlaceAdapter";
     /**
      * Constructor that passes in the Places data and the context
      * @param mContext context of the application
@@ -97,7 +100,11 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.PlaceViewHol
             mPlaceImage = itemView.findViewById(R.id.placesImage);
 
             // Set the OnClickListener to the entire view.
-            itemView.setOnClickListener(this);
+            // itemView.setOnClickListener(this);
+
+            // set the onClickListener to only text line.
+            mPlaceInfo.setOnClickListener(this);
+            mPlaceName.setOnClickListener(this);
         }
         void bindTo(Place currentPlace){
             // Populate the textView with data/info
@@ -111,13 +118,18 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.PlaceViewHol
         public void onClick(View view) {
             // get the sport object for the item that was clicked
             Place currentPlace = mPlacesData.get(getAdapterPosition());
+            if(view.getId() == mPlaceInfo.getId()) {
+                // create intent to launch new activity for details
+                Intent detailIntent = new Intent(mContext, DetailActivity.class);
+                detailIntent.putExtra("place_name", currentPlace.getPlaceName());
+                detailIntent.putExtra("place_info", currentPlace.getInfo());
+                detailIntent.putExtra("image_resource", currentPlace.getImageResource());
+                mContext.startActivity(detailIntent);
+            }else if(view.getId() == mPlaceName.getId()){
+               Log.d(TAG, "onClick: Place: " + currentPlace + " was clicked ");
+                //Toast.makeText(mContext, "Place name clicked",Toast.LENGTH_SHORT ).show();
 
-            // create intent to launch new activity for details
-            Intent detailIntent = new Intent(mContext, DetailActivity.class);
-            detailIntent.putExtra("place_name", currentPlace.getPlaceName());
-            detailIntent.putExtra("place_info", currentPlace.getInfo());
-            detailIntent.putExtra("image_resource", currentPlace.getImageResource());
-            mContext.startActivity(detailIntent);
+            }
         }
     }
 }

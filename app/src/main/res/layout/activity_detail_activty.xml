@@ -17,7 +17,7 @@
 
         <TextView
             android:id="@+id/place_name_detail"
-            style="@style/TextAppearance.AppCompat.Title"
+            style="@style/PlacesNameDetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/placesImage_detail"
@@ -27,16 +27,17 @@
 
         <TextView
             android:id="@+id/info_Title_detail"
-            style="@style/TextAppearance.AppCompat.Subhead"
+            style="@style/PlacesDetailText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/placesImage_detail"
             android:padding="16dp"
+            android:textStyle="bold"
             android:text="@string/information" />
 
         <TextView
             android:id="@+id/info_subTitle_detail"
-            style="@style/Base.TextAppearance.AppCompat.Subhead"
+            style="@style/PlacesDetailText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/info_Title_detail"

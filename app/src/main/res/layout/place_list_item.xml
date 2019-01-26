@@ -33,6 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/placesImage"
         android:padding="8dp"
+        android:textStyle="bold"
         android:text="@string/information" />
 
     <TextView

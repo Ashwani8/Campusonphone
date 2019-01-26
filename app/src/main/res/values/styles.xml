@@ -11,5 +11,7 @@
 parent="TextAppearance.AppCompat.Subhead"/>
 <style name="PlacesName"
 parent="TextAppearance.AppCompat.Headline"/>
+    <style name="PlacesNameDetails"
+        parent="TextAppearance.AppCompat.Headline"/>
 
     </resources>

@@ -1,6 +1,7 @@
 package com.example.admin.campusonphone;
 
 import android.content.res.TypedArray;
+import android.media.MediaPlayer;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -107,6 +108,9 @@ public class MainActivity extends AppCompatActivity {
         String[] placeInfo = getResources().getStringArray(R.array.places_detail_info);
         TypedArray placeImageResources =
                 getResources().obtainTypedArray(R.array.places_images);
+        // The indices used to retrieve values from this structure corresponds
+        // to the position of the attributes given to obtain Styled attributes
+        // should we use field?
         TypedArray placeAudioResources =
                 getResources().obtainTypedArray(R.array.places_audio);
         // Clear the existing place data/information to avaoid duplication
@@ -129,4 +133,5 @@ public class MainActivity extends AppCompatActivity {
     public void resetPlaces(View view) {
         initializeData();
     }
+
 }

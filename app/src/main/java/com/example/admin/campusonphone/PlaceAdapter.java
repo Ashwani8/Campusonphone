@@ -25,11 +25,11 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.PlaceViewHol
     private Context mContext;
     private static final String TAG = "PlaceAdapter";
     /** handles playback of all the sound files */
-    private MediaPlayer mMediaPlayer;
+    private static MediaPlayer mMediaPlayer;
     /**
      * This listener gets triggered when the Media Player has completed playing audio file
      */
-    private MediaPlayer.OnCompletionListener mCompletionListener =
+    MediaPlayer.OnCompletionListener mCompletionListener =
             new MediaPlayer.OnCompletionListener() {
                 @Override
                 public void onCompletion(MediaPlayer mp) {
@@ -123,7 +123,8 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.PlaceViewHol
             mPlaceName.setText(currentPlace.getPlaceName());
             mPlaceInfo.setText(currentPlace.getInfo());
             Glide.with(mContext).load(currentPlace.getImageResource()).into(mPlaceImage);
-            }
+
+        }
 
         // implements onClick on entire itemView (set earlier)
         @Override
@@ -136,6 +137,7 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.PlaceViewHol
                 detailIntent.putExtra("place_name", currentPlace.getPlaceName());
                 detailIntent.putExtra("place_info", currentPlace.getInfo());
                 detailIntent.putExtra("image_resource", currentPlace.getImageResource());
+                detailIntent.putExtra("audio_resource", currentPlace.getAudioResource());
                 mContext.startActivity(detailIntent);
             }else if(view.getId() == mPlaceAudio.getId()){
                //Log.d(TAG, "onClick: Place: " + currentPlace + " was clicked ");
@@ -151,9 +153,11 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.PlaceViewHol
                 // Setup a listener on the media player, so that we can stop and release the
                 // media player once the sounds has finised playing
                 mMediaPlayer.setOnCompletionListener(mCompletionListener);
+
             }
         }
     }
+
     /**
      * Clean up the media player by releasing its resources.
      */
@@ -170,4 +174,6 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.PlaceViewHol
             mMediaPlayer = null;
         }
     }
+    // TODO stop media player when activity is stopped/paused
+
 }

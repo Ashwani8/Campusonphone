@@ -26,7 +26,7 @@
             android:theme="@style/ThemeOverlay.AppCompat.Dark" />
 
         <TextView
-            android:id="@+id/info_Title_detail"
+            android:id="@+id/info_audio_detail"
             style="@style/PlacesDetailText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -40,7 +40,7 @@
             style="@style/PlacesDetailText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/info_Title_detail"
+            android:layout_below="@+id/info_audio_detail"
             android:padding="16dp"
             android:autoLink="web"
             android:text="@string/detail_text" />

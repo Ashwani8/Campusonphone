@@ -33,7 +33,7 @@
             android:layout_below="@+id/placesImage_detail"
             android:padding="16dp"
             android:textStyle="bold"
-            android:text="@string/information" />
+            android:text="@string/listen_tv" />
 
         <TextView
             android:id="@+id/info_subTitle_detail"

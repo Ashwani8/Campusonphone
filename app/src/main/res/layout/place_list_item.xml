@@ -27,14 +27,14 @@
         android:text="@string/place_name" />
 
     <TextView
-        android:id="@+id/info_Title"
+        android:id="@+id/info_audio"
         style="@style/PlacesDetailText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/placesImage"
         android:padding="8dp"
         android:textStyle="bold"
-        android:text="@string/information" />
+        android:text="Listen" />
 
     <TextView
         android:id="@+id/info_subTitle"
@@ -43,7 +43,7 @@
         android:layout_height="wrap_content"
         android:padding="8dp"
         android:maxLines="1"
-        android:layout_below="@+id/info_Title"
+        android:layout_below="@+id/info_audio"
         android:text="@string/place_info_details" />
 </RelativeLayout>
 </android.support.v7.widget.CardView>

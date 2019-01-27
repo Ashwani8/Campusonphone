@@ -3,16 +3,13 @@ package com.example.admin.campusonphone;
 import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
-import android.net.ConnectivityManager;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
@@ -26,6 +23,7 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.PlaceViewHol
     private ArrayList<Place> mPlacesData;
     private Context mContext;
     private static final String TAG = "PlaceAdapter";
+
     /**
      * Constructor that passes in the Places data and the context
      * @param mContext context of the application
@@ -85,6 +83,7 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.PlaceViewHol
         // member variables for the TextView
         private TextView mPlaceName;
         private  TextView mPlaceInfo;
+        private TextView mPlaceAudio;
         private ImageView mPlaceImage;
 
         /**
@@ -98,20 +97,20 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.PlaceViewHol
             mPlaceName = itemView.findViewById(R.id.place_name);
             mPlaceInfo = itemView.findViewById(R.id.info_subTitle); // some information
             mPlaceImage = itemView.findViewById(R.id.placesImage);
-
+            mPlaceAudio = itemView.findViewById(R.id.info_audio);
             // Set the OnClickListener to the entire view.
             // itemView.setOnClickListener(this);
 
             // set the onClickListener to only text line.
             mPlaceInfo.setOnClickListener(this);
-            mPlaceName.setOnClickListener(this);
+            mPlaceAudio.setOnClickListener(this);
         }
         void bindTo(Place currentPlace){
             // Populate the textView with data/info
             mPlaceName.setText(currentPlace.getPlaceName());
             mPlaceInfo.setText(currentPlace.getInfo());
             Glide.with(mContext).load(currentPlace.getImageResource()).into(mPlaceImage);
-        }
+            }
 
         // implements onClick on entire itemView (set earlier)
         @Override
@@ -125,10 +124,10 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.PlaceViewHol
                 detailIntent.putExtra("place_info", currentPlace.getInfo());
                 detailIntent.putExtra("image_resource", currentPlace.getImageResource());
                 mContext.startActivity(detailIntent);
-            }else if(view.getId() == mPlaceName.getId()){
-               Log.d(TAG, "onClick: Place: " + currentPlace + " was clicked ");
+            }else if(view.getId() == mPlaceAudio.getId()){
+               //Log.d(TAG, "onClick: Place: " + currentPlace + " was clicked ");
                 //Toast.makeText(mContext, "Place name clicked",Toast.LENGTH_SHORT ).show();
-                MediaPlayer mMediaPlayer = MediaPlayer.create(mContext, R.raw.om_jai);
+                MediaPlayer mMediaPlayer = MediaPlayer.create(mContext, currentPlace.getAudioResource());
                 mMediaPlayer.start();
             }
         }

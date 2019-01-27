@@ -46,6 +46,19 @@
         <item>@drawable/img_tabletennis</item>
         <item>@drawable/img_tennis</item>
     </array>
+    <array name="places_audio">
+        <item>@raw/audio_baseball</item>
+        <item>@raw/audio_badminton</item>
+        <item>@raw/audio_basketball</item>
+        <item>@raw/audio_bowling</item>
+        <item>@raw/audio_cycling</item>
+        <item>@raw/audio_golf</item>
+        <item>@raw/audio_running</item>
+        <item>@raw/audio_soccer</item>
+        <item>@raw/audio_swimming</item>
+        <item>@raw/audio_tabletennis</item>
+        <item>@raw/audio_tennis</item>
+    </array>
 
     <string-array name="places_detail_info">
         <item>@string/detail_baseball</item>
@@ -109,4 +122,5 @@ source https://en.wikipedia.org/wiki/Badminton</string>
 \n\n Tennis is an Olympic sport and is played at all levels of society and at all ages. The sport can be played by anyone who can hold a racket, including wheelchair users. The modern game of tennis originated in Birmingham, England, in the late 19th century as lawn tennis. It had close connections both to various field (lawn) games such as croquet and bowls as well as to the older racket sport today called real tennis. During most of the 19th century, in fact, the term tennis referred to real tennis, not lawn tennis: for example, in Disraeli\'s novel Sybil (1845), Lord Eugene De Vere announces that he will "go down to Hampton Court and play tennis."
 
 \n\n source https://en.wikipedia.org/wiki/Tennis</string>
+    <string name="listen_tv">Listen</string>
 </resources>

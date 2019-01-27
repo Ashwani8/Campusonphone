@@ -107,7 +107,8 @@ public class MainActivity extends AppCompatActivity {
         String[] placeInfo = getResources().getStringArray(R.array.places_detail_info);
         TypedArray placeImageResources =
                 getResources().obtainTypedArray(R.array.places_images);
-
+        TypedArray placeAudioResources =
+                getResources().obtainTypedArray(R.array.places_audio);
         // Clear the existing place data/information to avaoid duplication
         mPlacesData.clear();
 
@@ -115,9 +116,11 @@ public class MainActivity extends AppCompatActivity {
         // information about each place
         for (int i = 0; i < placeList.length; i++) {
             mPlacesData.add(new Place(placeList[i], placeInfo[i],
-                    placeImageResources.getResourceId(i, 0)));
+                    placeImageResources.getResourceId(i, 0),
+                    placeAudioResources.getResourceId(i,0)));
         }
         placeImageResources.recycle();
+        placeAudioResources.recycle();
         // Notify the adapter of the change.
         mAdapter.notifyDataSetChanged();
     }

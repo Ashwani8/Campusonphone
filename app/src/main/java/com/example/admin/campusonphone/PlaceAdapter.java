@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
@@ -23,7 +24,18 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.PlaceViewHol
     private ArrayList<Place> mPlacesData;
     private Context mContext;
     private static final String TAG = "PlaceAdapter";
-
+    /** handles playback of all the sound files */
+    private MediaPlayer mMediaPlayer;
+    /**
+     * This listener gets triggered when the Media Player has completed playing audio file
+     */
+    private MediaPlayer.OnCompletionListener mCompletionListener =
+            new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mp) {
+                    releaseMediaPlayer();
+                }
+            };
     /**
      * Constructor that passes in the Places data and the context
      * @param mContext context of the application
@@ -86,6 +98,7 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.PlaceViewHol
         private TextView mPlaceAudio;
         private ImageView mPlaceImage;
 
+
         /**
          * Constructor for the ViewHolder, used in onCreteViewHolder
          * @param itemView The rootview of the place_list_item
@@ -127,9 +140,34 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.PlaceViewHol
             }else if(view.getId() == mPlaceAudio.getId()){
                //Log.d(TAG, "onClick: Place: " + currentPlace + " was clicked ");
                 //Toast.makeText(mContext, "Place name clicked",Toast.LENGTH_SHORT ).show();
-                MediaPlayer mMediaPlayer = MediaPlayer.create(mContext, currentPlace.getAudioResource());
-                mMediaPlayer.start();
+
+                // Release the media player just in case it was currently playing different audio
+                releaseMediaPlayer();
+                // Create and setup the MediaPlayer for the audio associated with the current place
+                mMediaPlayer = MediaPlayer.create(mContext, currentPlace.getAudioResource());
+                // starts the audio file
+                mMediaPlayer.start(); // no need to call prepare
+
+                // Setup a listener on the media player, so that we can stop and release the
+                // media player once the sounds has finised playing
+                mMediaPlayer.setOnCompletionListener(mCompletionListener);
             }
+        }
+    }
+    /**
+     * Clean up the media player by releasing its resources.
+     */
+    private void releaseMediaPlayer() {
+        // If the media player is not null, then it may be currently playing a sound.
+        if (mMediaPlayer != null) {
+            // Regardless of the current state of the media player, release its resources
+            // because we no longer need it.
+            mMediaPlayer.release();
+
+            // Set the media player back to null. For our code, we've decided that
+            // setting the media player to null is an easy way to tell that the media player
+            // is not configured to play an audio file at the moment.
+            mMediaPlayer = null;
         }
     }
 }

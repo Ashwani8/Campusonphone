@@ -174,6 +174,8 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.PlaceViewHol
             mMediaPlayer = null;
         }
     }
-    // TODO stop media player when activity is stopped/paused
+    // TODO stop media player when activity is stopped/paused,
+    // should I develop an interface?
+    // TODO Audio focus Manage
 
 }

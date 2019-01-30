@@ -1,5 +1,6 @@
 package com.example.admin.campusonphone;
 
+import android.content.Intent;
 import android.content.res.TypedArray;
 import android.media.MediaPlayer;
 import android.support.annotation.NonNull;
@@ -15,7 +16,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity {
-
+    private static final String TAG = "MainActivity";
     //Member variables
     private RecyclerView mRecyclerView;
     private ArrayList<Place> mPlacesData;
@@ -113,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
         // should we use field?
         TypedArray placeAudioResources =
                 getResources().obtainTypedArray(R.array.places_audio);
-        // Clear the existing place data/information to avaoid duplication
+        // Clear the existing place data/information to avoid duplication
         mPlacesData.clear();
 
         // Create the ArrayList of Places Objects with Names and
@@ -129,10 +130,19 @@ public class MainActivity extends AppCompatActivity {
         mAdapter.notifyDataSetChanged();
     }
 
+
+
     // FAB we are just using onClick method to reset data
-    public void resetPlaces(View view) {
-        initializeData();
+//    public void resetPlaces(View view) {
+//        initializeData();
+//    }
+    // FAB we are using to launch Map activity later we can add/change to toggle switch  or TAB
+    public void launchMapActivity(View view) {
+        // create intent to start MapActivity
+        Intent mapIntent = new Intent(this, MapActivity.class);
+        startActivity(mapIntent);
     }
+
 
 
 }

@@ -123,4 +123,8 @@ source https://en.wikipedia.org/wiki/Badminton</string>
 
 \n\n source https://en.wikipedia.org/wiki/Tennis</string>
     <string name="listen_tv">Listen</string>
+
+    <!--string format related to location-->
+    <string name="location_text">"Latitude: %1$.4f \n Longitude: %2$.4f
+\n Timestamp: %3$tr"</string>
 </resources>
